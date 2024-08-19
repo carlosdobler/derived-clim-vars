@@ -105,7 +105,7 @@ for (d in as.character(time_vector)) {
               gatt_val = "https://github.com/carlosdobler/derived-clim-vars/blob/main/vpd_mon_era5.R")
   
   # transfer to bucket
-  str_glue("gsutil mv {dir_temp}/era5_vapor-pressure-deficit_mon_{d}.nc {dir_data}/vapor_pressure_deficit") %>% 
+  str_glue("gsutil mv {dir_temp}/era5_vapor-pressure-deficit_mon_{d}.nc {dir_data}/vapor_pressure_deficit/") %>% 
     system(ignore.stdout = T, ignore.stderr = T)
   
   # delete temp files
