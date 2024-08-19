@@ -122,32 +122,32 @@ fs::dir_delete(dir_temp)
 
 
 
-# # EQUATION PROOF:
+# # EQUATIONS PROOF:
 # 
 # # From TDEW to RH
 # tdew = 6.2113
 # t2m = 25
-# 100 * exp((17.62 * tdew) / (243.12 + tdew)) / exp(17.62 * t2m / (243.12 + t2m)) # RH ~30
+# 100 * exp((17.62 * tdew) / (243.12 + tdew)) / exp(17.62 * t2m / (243.12 + t2m)) # rh = 30
 # 
 # # From RH to TDEW
 # rh = 30
 # t2m = 25
-# 243.04 * (log(rh/100) + ((17.625 * t2m) / (243.04 + t2m))) / (17.625 - log(rh/100) - ((17.625 * t2m) / (243.04 + t2m))) # tdew ~ 6.2213
+# 243.04 * (log(rh/100) + ((17.625 * t2m) / (243.04 + t2m))) / (17.625 - log(rh/100) - ((17.625 * t2m) / (243.04 + t2m))) # tdew = 6.2213
 # # Source: https://bmcnoldy.earth.miami.edu/Humidity.html
 # 
 # 
-# # From RH and TEMP to TDEW
+# # From RH + TEMP to VPD
 # rh = 30
 # t2m = 25
 # 
 # es = 0.6112 * exp((17.62 * t2m) / (243.12 + t2m)) # saturation vapor pressure (tetens)
-# es * (1 - rh/100) # vpd ~ 2.2120
+# es * (1 - rh/100) # vpd = 2.2120
 # # Source: ESSD paper linked above
 # 
 # # Alternative:
-# es = 0.6112 * exp((17.62 * t2m) / (243.12 + t2m)) # saturation vapor pressure (tetens?)
+# es = 0.6112 * exp((17.62 * t2m) / (243.12 + t2m)) # saturation vapor pressure (tetens)
 # ea = rh / 100 * es # actual vapor pressure
-# es-ea # vpd ~ 2.2120
+# es - ea # deficit: vpd = 2.2120
 # # Source: https://physics.stackexchange.com/questions/4343/how-can-i-calculate-vapor-pressure-deficit-from-temperature-and-relative-humidit
 
 
